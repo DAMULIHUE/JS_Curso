@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo mor</title>
+</head>
+<body>
+
+    <style>
+        * {
+            background-color: pink;
+        }
+
+        .imagemPrincipal {
+            margin:auto;
+            display: block;
+        }
+    </style>
+
+    <img id="imagemPrincipal"
+            class="imagemPrincipal"
+                src="imagens/eu.png" 
+                    alt="bope esponcha" >
+
+
+    <script>
+        var timeoutId = null;  // Variável para armazenar o ID do setTimeout
+        var imagem = document.getElementById("imagemPrincipal");
+        const imagemOriginal = imagem.src;
+
+        // Função para trocar a imagem
+        function mudarImagem() {
+        // Se já existe um timeout em andamento, reinicie-o
+        if (timeoutId !== null) {
+            clearTimeout(timeoutId);  // Limpa o timeout anterior
+        }
+
+        // Armazenar o caminho da imagem original
+        
+
+        // Trocar para uma nova imagem
+        imagem.src = "imagens/bateuperfeito.gif";
+
+        // Após 0,5 segundo, voltar para a imagem original
+        timeoutId = setTimeout(function() {
+                imagem.src = imagemOriginal;
+                timeoutId = null;  // Resetando o timeoutId após a troca da imagem
+            }, 500); // 500ms = 0,5 segundo
+        }
+
+        imagem.addEventListener("click", mudarImagem);
+
+        
+    </script>
+</body>
+</html>
